@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item-container {
+	min-height: 80vh;
+}
+
+.markdown-body ol {
+	list-style: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ol ul {
+	list-style: circle;
+}
+
+.markdown-body ul {
+	list-style: disc;
+}
+
+.scrollable {
+	max-height: calc(100vh - 11rem);
+}
+
+@media (min-width: 1024px) {
+	.item-list {
+		mask-image: linear-gradient(to top, transparent, black),
+			linear-gradient(to left, transparent 5px, black 5px);
+		mask-size: 100% 20000px;
+		mask-position: left bottom;
+		-webkit-mask-image: linear-gradient(to top, transparent, black),
+			linear-gradient(to left, transparent 5px, black 5px);
+		-webkit-mask-size: 100% 20000px;
+		-webkit-mask-position: left bottom;
+		transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+	}
+
+	.item-list:hover {
+		-webkit-mask-position: left top;
+	}
+
+	/* width */
+	.item-list::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	/* Track */
+	.item-list::-webkit-scrollbar-track {
+		background: #0f172a;
+	}
+
+	/* Handle */
+	.item-list::-webkit-scrollbar-thumb {
+		background: #64748b;
+	}
+
+	/* Handle on hover */
+	.item-list::-webkit-scrollbar-thumb:hover {
+		background: #475569;
+	}
+}

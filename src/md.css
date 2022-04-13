@@ -1,0 +1,17 @@
+ol {
+	list-style: decimal;
+}
+
+ul ul,
+ol ul {
+	list-style: circle;
+}
+
+ul {
+	list-style: disc;
+}
+
+.md-elements {
+	max-height: calc(100vh - 20rem);
+	background: red;
+}
