@@ -22,6 +22,8 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@octokit/oauth-app": "^3.6.0",
+    "base-64": "^1.0.0",
     "github-markdown-css": "^5.1.0",
     "svelte-fa": "^2.4.0",
     "svelte-markdown": "^0.2.2"
