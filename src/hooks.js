@@ -2,7 +2,7 @@ import cookie from "cookie";
 
 export async function handle({ event, resolve }) {
 	const cookies = cookie.parse(
-		event.request.headers.get("cookie") || "Error"
+		event.request.headers.get("cookie") || { user: null }
 	);
 	// do some stuff before
 	event.locals.user = cookies.user;

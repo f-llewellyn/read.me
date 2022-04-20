@@ -19,8 +19,10 @@
 </svelte:head>
 
 {#if user}
-	<h2>Welcome {user}</h2>
-	<a href="/logout"> logout </a>
+	<h2 class="text-white">Welcome {user}</h2>
+	<a href="/logout">logout</a>
+{:else}
+	<a href="/login">login</a>
 {/if}
 <div class="container flex flex-col lg:flex-row px-4 md:px-0">
 	<div class="hero max-w-1/2">
