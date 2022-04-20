@@ -1,12 +1,27 @@
+<script context="module">
+	export async function load({ session }) {
+		return {
+			props: {
+				user: session.user,
+			},
+		};
+	}
+</script>
+
 <script>
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
+	export let user;
 </script>
 
 <svelte:head>
 	<title>read.me | home</title>
 </svelte:head>
 
+{#if user}
+	<h2>Welcome {user}</h2>
+	<a href="/logout"> logout </a>
+{/if}
 <div class="container flex flex-col lg:flex-row px-4 md:px-0">
 	<div class="hero max-w-1/2">
 		<h1
