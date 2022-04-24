@@ -15,4 +15,9 @@
 </div>
 
 <style>
+	@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+
+	* :not(.markdonw-body) {
+		font-family: "Ubuntu Mono", monospace;
+	}
 </style>

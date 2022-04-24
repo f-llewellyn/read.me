@@ -34,6 +34,9 @@
 		<a class="text-xl hover:text-cyan-400 transition mt-1" href="/editor"
 			>editor</a
 		>
+		<a class="text-xl hover:text-cyan-400 transition mt-1" href="/github"
+			>github_repos</a
+		>
 
 		{#if $page.url.pathname === "/editor"}
 			<div

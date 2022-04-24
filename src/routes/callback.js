@@ -27,7 +27,8 @@ async function getUser(token) {
 			Authorization: `Bearer ${token}`,
 		},
 	});
-	return await res.json();
+	const data = await res.json();
+	return data;
 }
 
 export async function get(event) {
@@ -37,12 +38,15 @@ export async function get(event) {
 
 	// Get user
 	const user = await getUser(token);
+	event.locals.token = token;
 	event.locals.user = user.login;
+	event.locals.repos_url = user.repos_url;
+	event.locals.avatar_url = user.avatar_url;
 
 	return {
 		status: 302,
 		headers: {
-			location: "/",
+			location: "/github",
 		},
 	};
 }
