@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.item-container {
-	min-height: 80vh;
-}
-
 .markdown-body ol {
 	list-style: decimal;
 }
@@ -17,10 +13,6 @@
 
 .markdown-body ul {
 	list-style: disc;
-}
-
-.scrollable {
-	max-height: calc(100vh - 11rem);
 }
 
 @media (min-width: 1024px) {

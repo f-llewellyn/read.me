@@ -13,11 +13,10 @@
 
 <script>
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
-	import GHUserProfile from "../components/GHUserProfile.svelte";
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { onMount } from "svelte";
 	import RepoElement from "..//components/RepoElement.svelte";
-	export let user, repos_url, avatar_url, token;
+	export let user, repos_url, token;
 	let repoData = [];
 
 	onMount(async () => {
@@ -36,14 +35,17 @@
 	});
 </script>
 
+<svelte:head>
+	<title>read.me | github</title>
+</svelte:head>
+
 {#if user}
 	<div class="flex items-center">
 		<h1 class="text-5xl text-white font-bold w-1/2">
 			Select the repo of the README you'd like to edit:
 		</h1>
-		<GHUserProfile {user} {avatar_url} />
 	</div>
-	<div class="grid grid-cols-2 gap-4 mt-4">
+	<div class="grid grid-cols-2 gap-4 mt-10">
 		{#each repoData as repo}
 			<RepoElement {repo} {token} />
 		{/each}

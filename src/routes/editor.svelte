@@ -1,7 +1,14 @@
 <script>
+	import markdownText from "../stores/markdownText";
 	import ItemList from "../components/ItemList.svelte";
 	import Editor from "../components/Editor.svelte";
 	import MarkdownPreview from "../components/MarkdownPreview.svelte";
+	import Fa from "svelte-fa/src/fa.svelte";
+	import {
+		faDownload,
+		faTrashAlt,
+		faUpload,
+	} from "@fortawesome/free-solid-svg-icons";
 
 	let items = [
 		{ id: 1, name: "Heading 1", content: "# Heading 1" },
@@ -53,6 +60,20 @@
 			content: "---",
 		},
 	];
+
+	const clearText = () => {
+		localStorage.removeItem("markdownText");
+		$markdownText = "";
+	};
+
+	const downloadFile = () => {
+		localStorage.setItem("markdownText", $markdownText);
+		const a = document.createElement("a");
+		const file = new Blob([$markdownText]);
+		a.href = URL.createObjectURL(file);
+		a.download = "README.md";
+		a.click();
+	};
 </script>
 
 <svelte:head>
@@ -60,7 +81,7 @@
 </svelte:head>
 
 <div
-	class="item-container px-4 mx-auto md:grid md:grid-cols-5 gap-5 mb-5 text-slate-700 dark:text-white"
+	class="px-4 item-container mx-auto md:grid md:grid-cols-5 md:grid-rows-1 gap-5 text-slate-700 dark:text-white"
 >
 	<div>
 		<ItemList {items} />
@@ -74,3 +95,27 @@
 		<MarkdownPreview />
 	</div>
 </div>
+
+<div class="px-4 flex gap-4 my-4">
+	<button
+		class="transition py-2 px-4 bg-red-600 hover:bg-red-500 text-white font-bold text-xl rounded-lg"
+		on:click={clearText}><Fa icon={faTrashAlt} /></button
+	>
+	<a href="/github">
+		<button
+			class="transition py-2 px-4 bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-xl rounded-lg flex gap-2 items-center"
+			><Fa icon={faUpload} /> Upload</button
+		>
+	</a>
+	<button
+		class="transition py-2 px-4 bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-xl rounded-lg flex gap-2 items-center ml-auto"
+		on:click={downloadFile}><Fa icon={faDownload} /> Download</button
+	>
+</div>
+
+<style>
+	.item-container {
+		height: 100%;
+		max-height: 700px;
+	}
+</style>

@@ -7,10 +7,13 @@
 <h1 class="text-2xl font-bold mb-4">Preview</h1>
 
 <div
-	class="markdown-body overflow-scroll h-full border-2 border-slate-600 rounded-lg p-6 scrollable"
+	class="markdown-body overflow-scroll border-2 border-slate-600 rounded-lg p-6"
 >
 	<SvelteMarkdown source={$markdownText} />
 </div>
 
 <style>
+	.markdown-body {
+		height: 600px;
+	}
 </style>

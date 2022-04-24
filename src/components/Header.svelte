@@ -4,20 +4,14 @@
 	import ThemeToggle from "./ThemeToggle.svelte";
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { faDownload, faBars } from "@fortawesome/free-solid-svg-icons";
-	let toggleDropdown = false;
-	export let dark;
+	import GHUserProfile from "./GHUserProfile.svelte";
 
-	const downloadFile = () => {
-		const a = document.createElement("a");
-		const file = new Blob([$markdownText]);
-		a.href = URL.createObjectURL(file);
-		a.download = "README.md";
-		a.click();
-	};
+	export let avatar_url;
+	export let dark;
 </script>
 
 <nav
-	class="w-full py-4 px-4 md:px-0 {$page.url.pathname === '/'
+	class="w-full py-4 px-4 md:px-0 z-10 {$page.url.pathname === '/'
 		? 'bg-transparent'
 		: 'bg-slate-700 dark:bg-slate-900'}"
 >
@@ -34,11 +28,11 @@
 		<a class="text-xl hover:text-cyan-400 transition mt-1" href="/editor"
 			>editor</a
 		>
-		<a class="text-xl hover:text-cyan-400 transition mt-1" href="/github"
+		<!-- <a class="text-xl hover:text-cyan-400 transition mt-1" href="/github"
 			>github_repos</a
-		>
+		> -->
 
-		{#if $page.url.pathname === "/editor"}
+		<!-- {#if $page.url.pathname === "/editor"}
 			<div
 				class="menu ml-auto mt-1 text-2xl md:hidden cursor-pointer"
 				on:click|preventDefault={() => {
@@ -52,14 +46,17 @@
 			<div class="ml-auto md:hidden">
 				<ThemeToggle bind:dark />
 			</div>
-		{/if}
-
+		{/if} -->
+		<div class="ml-auto flex">
+			<GHUserProfile {avatar_url} />
+			<ThemeToggle bind:dark />
+		</div>
+		<!-- 
 		<div
 			class="dropdown {toggleDropdown
 				? 'flex'
 				: 'hidden'} bg-slate-700 dark:bg-slate-900 md:ml-auto md:flex items-center z-10 gap-6"
 		>
-			<ThemeToggle bind:dark />
 			{#if $page.url.pathname === "/editor"}
 				<button
 					class="transition py-1 px-5 bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-2xl rounded-lg flex items-center gap-4"
@@ -68,7 +65,7 @@
 					<p>Download</p></button
 				>
 			{/if}
-		</div>
+		</div> -->
 	</div>
 </nav>
 
@@ -83,15 +80,15 @@
 	}
 
 	@media (max-width: 768px) {
-		.dropdown {
+		/* .dropdown {
 			position: absolute;
 			left: 0;
 			padding: 0.5rem 1rem;
 			bottom: -3rem;
 			width: 100%;
 			margin: 0 auto;
-			/* display: flex; */
+			display: flex;
 			justify-content: space-between;
-		}
+		} */
 	}
 </style>
