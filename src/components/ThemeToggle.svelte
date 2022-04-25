@@ -15,7 +15,7 @@
 </script>
 
 <button
-	class="transition text-white text-4xl {dark
+	class="transition-all text-white text-4xl hover:-translate-y-1 {dark
 		? 'text-cyan-50'
 		: 'text-yellow-500'}"
 	on:click|preventDefault={() => {

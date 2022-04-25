@@ -27,9 +27,7 @@
 </script>
 
 <div
-	class="{selected
-		? 'bg-slate-800'
-		: 'bg-slate-900'} text-white px-4 py-2 rounded-lg cursor-pointer"
+	class="bg-slate-700 dark:bg-slate-900 text-white px-4 py-2 rounded-lg cursor-pointer"
 	on:click={getReadme}
 >
 	<h1 class="text-2xl flex items-center gap-2">

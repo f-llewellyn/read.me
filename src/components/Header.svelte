@@ -21,12 +21,16 @@
 			? 'text-slate-700'
 			: 'text-white'}"
 	>
-		<a class="flex items-center gap-3" href="/">
+		<a
+			class="transition flex items-center gap-3 hover:-translate-y-1"
+			href="/"
+		>
 			<img class="w-11" src="/logo.svg" alt="logo" />
 			<h1 class="text-3xl font-bold text-cyan-400">read.me</h1>
 		</a>
-		<a class="text-xl hover:text-cyan-400 transition mt-1" href="/editor"
-			>editor</a
+		<a
+			class="text-xl hover:text-cyan-400 transition mt-1 hover:-translate-y-1"
+			href="/editor">editor</a
 		>
 		<!-- <a class="text-xl hover:text-cyan-400 transition mt-1" href="/github"
 			>github_repos</a

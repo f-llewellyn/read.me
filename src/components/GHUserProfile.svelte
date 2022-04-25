@@ -4,13 +4,15 @@
 
 <div class="flex text-white gap-4 px-4 items-center justify-between">
 	{#if avatar_url}
-		<div class="flex items-center gap-4">
-			<img
-				src={avatar_url}
-				alt=""
-				class="aspect-square w-14 border-4 border-slate-600 rounded-full"
-			/>
-		</div>
+		<a href="/account">
+			<div class="flex items-center gap-4">
+				<img
+					src={avatar_url}
+					alt=""
+					class="transition-all aspect-square w-12 rounded-full hover:-translate-y-1"
+				/>
+			</div>
+		</a>
 	{:else}
 		<a
 			href="/login"

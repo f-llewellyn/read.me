@@ -20,7 +20,9 @@
 </script>
 
 <div class:dark>
-	<main class="min-h-screen min-w-full bg-white dark:bg-slate-700">
+	<main
+		class="transition-all min-h-screen min-w-full bg-white dark:bg-slate-700"
+	>
 		<Header bind:dark {avatar_url} />
 		<div class="container mx-auto py-4">
 			<slot />
