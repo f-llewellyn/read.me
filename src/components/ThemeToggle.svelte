@@ -1,7 +1,7 @@
 <script>
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-	export let dark;
+	import dark from "../stores/dark";
 
 	// const toggleTheme = () => {
 	// 	if (theme === "dark") {
@@ -15,14 +15,20 @@
 </script>
 
 <button
-	class="transition-all text-white text-4xl hover:-translate-y-1 {dark
+	class="transition-all text-white text-4xl hover:-translate-y-1 {$dark
 		? 'text-cyan-50'
 		: 'text-yellow-500'}"
 	on:click|preventDefault={() => {
-		dark = !dark;
+		$dark = !$dark;
+		// console.log($dark);
+		if ($dark) {
+			localStorage.setItem("theme", "dark");
+		} else {
+			localStorage.setItem("theme", "light");
+		}
 	}}
 >
-	{#if dark}
+	{#if $dark}
 		<Fa icon={faMoon} />
 	{:else}
 		<Fa icon={faSun} />

@@ -12,20 +12,30 @@
 </script>
 
 <script>
-	import "../app.css";
+	import { onMount } from "svelte";
+	import dark from "../stores/dark";
 	import Header from "../components/Header.svelte";
+	import "../app.css";
 
 	export let avatar_url;
-	let dark = true;
+
+	onMount(() => {
+		if (localStorage.getItem("theme") === "dark") {
+			$dark = true;
+		} else {
+			$dark = false;
+			localStorage.setItem("theme", "light");
+		}
+	});
 </script>
 
-<div class:dark>
+<div class={$dark ? "dark" : ""}>
 	<main
 		class="transition-all min-h-screen min-w-full bg-white dark:bg-slate-700"
 	>
-		<Header bind:dark {avatar_url} />
-		<div class="container mx-auto py-4">
-			<slot />
+		<Header {avatar_url} />
+		<div class="container mx-auto p-4">
+			<slot {dark} />
 		</div>
 	</main>
 </div>
