@@ -21,7 +21,7 @@
 </script>
 
 <div
-	class="bg-slate-600 dark:bg-slate-900 mx-auto mt-10 w-1/3 flex flex-col justify-center items-center rounded-lg p-4 text-white gap-4"
+	class="bg-slate-600 dark:bg-slate-900 mx-auto mt-10 md:w-1/3 flex flex-col justify-center items-center rounded-lg p-4 text-white gap-4"
 >
 	{#if user}
 		<img src={avatar_url} class="aspect-square w-40 rounded-full" alt="" />

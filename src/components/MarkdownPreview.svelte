@@ -2,7 +2,6 @@
 	import "../styles/md.css";
 	import markdownText from "../stores/markdownText";
 	import SvelteMarkdown from "svelte-markdown";
-	import { browser } from "$app/env";
 	import dark from "../stores/dark";
 
 	// $: if (theme === "dark") {

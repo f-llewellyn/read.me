@@ -32,7 +32,7 @@
 >
 	<h1 class="text-2xl flex items-center gap-2">
 		<Fa icon={faGithub} />
-		{repo.full_name}
+		{repo.name}
 	</h1>
 	<div class="flex items-center">
 		<p class="mr-4">Stars: {repo.stargazers_count}</p>

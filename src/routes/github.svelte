@@ -42,11 +42,13 @@
 
 {#if user}
 	<div class="flex items-center">
-		<h1 class="text-5xl text-slate-700 dark:text-white font-bold w-1/2">
+		<h1
+			class="md:text-5xl text-slate-700 dark:text-white text-center text-2xl font-bold md:text-left"
+		>
 			Select the repo of the README you'd like to edit:
 		</h1>
 	</div>
-	<div class="grid grid-cols-2 gap-4 mt-10">
+	<div class="grid md:grid-cols-2 grid-cols-1 gap-4 mt-10">
 		{#each repoData as repo}
 			<RepoElement {repo} {token} />
 		{/each}

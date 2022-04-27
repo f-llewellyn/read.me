@@ -81,7 +81,7 @@
 </svelte:head>
 
 <div
-	class="item-container mx-auto md:grid md:grid-cols-5 md:grid-rows-1 gap-5 text-slate-700 dark:text-white"
+	class="item-container mx-auto grid-cols-1 grid-rows-3  md:grid md:grid-cols-5 md:grid-rows-1 gap-5 text-slate-700 dark:text-white"
 >
 	<div>
 		<ItemList {items} />
@@ -96,7 +96,7 @@
 	</div>
 </div>
 
-<div class="flex gap-4 my-4">
+<div class="flex flex-col md:flex-row items-center gap-4 my-4">
 	<button
 		class="transition py-2 px-4 bg-red-600 hover:bg-red-500 text-white font-bold text-xl rounded-lg"
 		on:click={clearText}><Fa icon={faTrashAlt} /></button
@@ -108,7 +108,7 @@
 		>
 	</a>
 	<button
-		class="transition py-2 px-4 bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-xl rounded-lg flex gap-2 items-center ml-auto"
+		class="transition py-2 px-4 bg-cyan-400 hover:bg-cyan-500 text-white font-bold text-xl rounded-lg flex gap-2 items-center md:ml-auto"
 		on:click={downloadFile}><Fa icon={faDownload} /> Download</button
 	>
 </div>
@@ -116,6 +116,6 @@
 <style>
 	.item-container {
 		height: 100%;
-		max-height: 700px;
+		/* max-height: 700px; */
 	}
 </style>
