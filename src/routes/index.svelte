@@ -25,10 +25,10 @@
 					>Get Started</button
 				>
 			</a>
-			<a href="https://github.com/f-llewellyn" target="_">
+			<a href="https://github.com/f-llewellyn/read.me" target="_">
 				<button
 					class="transition flex items-center py-2 px-5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-2xl rounded-lg"
-					><Fa icon={faGithub} class="mr-2" /> GitHub</button
+					><Fa icon={faGithub} class="mr-2" /> View on GitHub</button
 				>
 			</a>
 		</div>
@@ -43,6 +43,24 @@
 
 	<div class="sidebar absolute" />
 </div>
+
+<a href="https://www.buymeacoffee.com/fllewellyn" target="_">
+	<button
+		class="transition-all p-4 aspect-square bg-yellow-400 rounded-full text-2xl fixed bottom-4 right-4 flex items-center gap-4 z-50 hover:-translate-y-1"
+		>☕</button
+	>
+</a>
+<footer
+	class="p-4 bg-slate-700 dark:bg-slate-900 flex justify-center absolute bottom-0 left-0 w-full -mt-14"
+>
+	<p class="text-white">
+		Designed and developed by <a
+			class="text-cyan-400 font-bold"
+			href="https://github.com/f-llewellyn"
+			target="_">Finn Llewellyn</a
+		>
+	</p>
+</footer>
 
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");

@@ -1,15 +1,16 @@
 import cookie from "cookie";
 
 export async function handle({ event, resolve }) {
+	// Empty string in case of user not being logged in
 	const cookies = cookie.parse(event.request.headers.get("cookie") || "");
-	// do some stuff before
+	// Store the value from cookies in the local storage
 	event.locals.token = cookies.token;
 	event.locals.user = cookies.user;
 	event.locals.repos_url = cookies.repos_url;
 	event.locals.avatar_url = cookies.avatar_url;
 	const response = await resolve(event);
 
-	// do some stuff after
+	// Set a cookie of the username stored in sveltekit local storage that is accessable from any directory and is only editble by http
 	response.headers.set(
 		"set-cookie",
 		`user=${event.locals.user || ""}; path=/; HttpOnly`
