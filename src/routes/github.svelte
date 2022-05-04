@@ -48,7 +48,7 @@
 			Select the repo of the README you'd like to edit:
 		</h1>
 	</div>
-	<div class="grid md:grid-cols-2 grid-cols-1 gap-4 mt-10">
+	<div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10">
 		{#each repoData as repo}
 			<RepoElement {repo} {token} />
 		{/each}

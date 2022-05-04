@@ -36,7 +36,7 @@
 		class="transition-all min-h-screen min-w-full bg-white dark:bg-slate-700"
 	>
 		<Header {avatar_url} />
-		<div class="flex-grow mx-auto md:p-6 p-2">
+		<div class="flex-grow min-h-full mx-auto md:p-6 p-2">
 			<slot {dark} />
 		</div>
 		<!-- <a href="https://github.com/f-llewellyn" target="_">''

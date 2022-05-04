@@ -81,17 +81,17 @@
 </svelte:head>
 
 <div
-	class="item-container mx-auto grid-cols-1 grid-rows-3  md:grid md:grid-cols-5 md:grid-rows-1 gap-5 text-slate-700 dark:text-white"
+	class="item-container mx-auto grid-cols-1 grid-rows-3 md:grid md:grid-cols-5 md:grid-rows-1 gap-5 text-slate-700 dark:text-white justify-items-stretch"
 >
-	<div>
+	<div class="h-full">
 		<ItemList {items} />
 	</div>
 
-	<div class="col-span-2">
+	<div class="col-span-2 h-full">
 		<Editor />
 	</div>
 
-	<div class="col-span-2">
+	<div class="col-span-2 h-full">
 		<MarkdownPreview />
 	</div>
 </div>
@@ -115,7 +115,6 @@
 
 <style>
 	.item-container {
-		height: 100%;
-		/* max-height: 700px; */
+		height: calc(100vh - 205px);
 	}
 </style>
